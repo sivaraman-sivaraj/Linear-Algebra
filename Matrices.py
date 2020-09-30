@@ -25,7 +25,7 @@ def translation3D(angle):
 
 
 
-def reflection(angle):
+def reflection2D(angle):
     theta = (angle/180)*(np.pi)
     e11 = np.cos(theta)
     e12 = np.sin(theta)
@@ -33,6 +33,21 @@ def reflection(angle):
     e22 = -np.cos(theta)
     temp = [[e11,e12],[e21,e22]]
     return np.array(temp)
+
+def reflection3D(angle):
+    theta = (angle/180)*(np.pi)
+    e11 = np.cos(theta)
+    e12 = np.sin(theta)
+    e13 = 0
+    e21 = np.sin(theta)
+    e22 = -np.cos(theta)
+    e23 = 0
+    e31 = 0
+    e32 = 0
+    e33 = 1
+    temp = [[e11,e12,e13],[e21,e22,e23],[e31,e32,e33]]
+    return np.array(temp)
+
 
 def HouseHolder(u):
     I = np.identity(len(u))
